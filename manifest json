@@ -1,0 +1,26 @@
+{
+  "id": "org.falcon.xyz.addon",
+  "version": "1.0.0",
+  "name": "Falcon",
+  "description": "Stremio addon for movies and TV shows via Falcon IPTV",
+  "logo": "https://dl.strem.io/addon-logo.png",
+  "background": "https://dl.strem.io/addon-background.jpg",
+  "types": ["movie", "series", "tv"],
+  "catalogs": [
+    {
+      "type": "tv",
+      "id": "falcon-tv",
+      "name": "Falcon TV",
+      "extra": [
+        { "name": "search", "isRequired": false },
+        { "name": "skip", "isRequired": false }
+      ]
+    }
+  ],
+  "resources": ["catalog", "stream"],
+  "idPrefixes": ["falcon-"],
+  "behaviorHints": {
+    "configurable": false,
+    "adult": false
+  }
+}
