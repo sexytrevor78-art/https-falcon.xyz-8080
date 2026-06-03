@@ -1,0 +1,16 @@
+{
+  "id": "org.falcon.iptv",
+  "version": "1.0.0",
+  "name": "Falcon",
+  "description": "Free movies and TV shows via Falcon",
+  "types": ["movie", "series", "channel"],
+  "catalogs": [
+    {
+      "type": "channel",
+      "id": "falcon-iptv",
+      "name": "Falcon IPTV"
+    }
+  ],
+  "resources": ["catalog", "stream"],
+  "logo": "https://dl.strem.io/addon-logo.png"
+}
