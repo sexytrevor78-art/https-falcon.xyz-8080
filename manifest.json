@@ -1,0 +1,13 @@
+{
+  "id": "org.falcon.iptv",
+  "version": "1.0.0",
+  "name": "Falcon",
+  "description": "Free movies and TV shows",
+  "types": ["channel"],
+  "catalogs": [],
+  "resources": ["stream"],
+  "idPrefixes": ["falcon"],
+  "behaviorHints": {
+    "configurable": false
+  }
+}
