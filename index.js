@@ -21,12 +21,13 @@ const manifest = {
       ]
     }
   ],
-  idPrefixes: ["falcon:"]
+  idPrefixes: ["falcon:"],
+  contactEmail: "support@falcon-addon.com"
 };
 
 const builder = new addonBuilder(manifest);
 
-// ── CATALOG ──────────────────────────────────────────────────────────────────
+// ── CATALOG ────────��──────────────────────────────────────────────────
 builder.defineCatalogHandler(async ({ type, id, extra }) => {
   if (type !== "movie" || id !== "falcon-public-domain") return { metas: [] };
 
@@ -40,7 +41,7 @@ builder.defineCatalogHandler(async ({ type, id, extra }) => {
       url = `https://archive.org/advancedsearch.php?q=${encodeURIComponent(search)}+AND+mediatype:movies+AND+licenseurl:*creativecommons*&fl[]=identifier,title,description,year,creator,subject&rows=${rows}&page=1&output=json`;
     } else {
       const page = Math.floor(skip / rows) + 1;
-      url = `https://archive.org/advancedsearch.php?q=mediatype:movies+AND+subject:feature+film+AND+licenseurl:*creativecommons*+OR+(mediatype:movies+AND+collection:feature_films)&fl[]=identifier,title,description,year,creator&sort[]=downloads+desc&rows=${rows}&page=${page}&output=json`;
+      url = `https://archive.org/advancedsearch.php?q=mediatype:movies+AND+subject:feature+film+AND+licenseurl:*creativecommons*&fl[]=identifier,title,description,year,creator,subject&rows=${rows}&page=${page}&output=json`;
     }
 
     const res  = await axios.get(url, { timeout: 10000 });
@@ -66,7 +67,7 @@ builder.defineCatalogHandler(async ({ type, id, extra }) => {
   }
 });
 
-// ── META ──────────────────────────────────────────────────────────────────────
+// ── META ────────────────────────────────────────────────────────────
 builder.defineMetaHandler(async ({ type, id }) => {
   if (type !== "movie" || !id.startsWith("falcon:")) return { meta: null };
 
@@ -95,7 +96,7 @@ builder.defineMetaHandler(async ({ type, id }) => {
   }
 });
 
-// ── STREAMS ───────────────────────────────────────────────────────────────────
+// ── STREAMS ───────────────────────────────────────────────────────────
 builder.defineStreamHandler(async ({ type, id }) => {
   if (type !== "movie" || !id.startsWith("falcon:")) return { streams: [] };
 
@@ -127,7 +128,7 @@ builder.defineStreamHandler(async ({ type, id }) => {
   }
 });
 
-// ── SERVE ─────────────────────────────────────────────────────────────────────
+// ── SERVE ───────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 7000;
 serveHTTP(builder.getInterface(), { port: PORT });
 console.log(`🦅 Falcon addon running on port ${PORT}`);
