@@ -4,6 +4,28 @@ Free public domain movies from the Internet Archive — works on PC and Android.
 
 ---
 
+## 🚀 Quick Start — Install Now
+
+Your addon is live! Add it to Stremio right now:
+
+**Addon URL:** `https://https-falcon-xyz-8080.onrender.com/manifest.json`
+
+### On PC:
+1. Open Stremio
+2. Go to **Addons**
+3. Click **Install Add-on**
+4. Paste: `https://https-falcon-xyz-8080.onrender.com/manifest.json`
+5. Click **Install**
+
+### On Android:
+1. Open Stremio app
+2. Tap the **puzzle piece icon** (Addons)
+3. Tap the **🔍 search icon**
+4. Paste: `https://https-falcon-xyz-8080.onrender.com/manifest.json`
+5. Tap **Install**
+
+---
+
 ## Deploy on Render.com (Free, phone-friendly)
 
 ### Step 1 — Push these files to GitHub
