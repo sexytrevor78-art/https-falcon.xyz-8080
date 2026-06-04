@@ -1,74 +1,90 @@
-# 🦅 Falcon Stremio Addon
+# 🦅 Falcon – Free Stremio Addon
 
-Free public domain movies from the Internet Archive — works on PC and Android.
+A free Stremio addon serving public domain movies from the Internet Archive plus curated classic catalogs from the 80s, 90s, 2000s, and horror genre.
 
----
+## Install
 
-## 🚀 Quick Start — Install Now
+Add the addon to Stremio using this URL:
 
-Your addon is live! Add it to Stremio right now:
+```
+https://https-falcon-xyz-8080.onrender.com/manifest.json
+```
 
-**Addon URL:** `https://https-falcon-xyz-8080.onrender.com/manifest.json`
+Or click the link below to install directly:
 
-### On PC:
-1. Open Stremio
-2. Go to **Addons**
-3. Click **Install Add-on**
-4. Paste: `https://https-falcon-xyz-8080.onrender.com/manifest.json`
-5. Click **Install**
-
-### On Android:
-1. Open Stremio app
-2. Tap the **puzzle piece icon** (Addons)
-3. Tap the **🔍 search icon**
-4. Paste: `https://https-falcon-xyz-8080.onrender.com/manifest.json`
-5. Tap **Install**
+[Install Falcon Addon](https://app.strem.io/#https://https-falcon-xyz-8080.onrender.com/manifest.json)
 
 ---
 
-## Deploy on Render.com (Free, phone-friendly)
+## Manifest
 
-### Step 1 — Push these files to GitHub
-1. Go to **github.com** on your phone browser
-2. Open your existing repo: `sexytrevor78-art/https-falcon.xyz-8080`
-3. Delete the old files (Sources.json, README.md)
-4. Upload the new files: `index.js` and `package.json`
-
-### Step 2 — Deploy on Render.com
-1. Go to **render.com** and sign up (free)
-2. Tap **New** → **Web Service**
-3. Connect your GitHub account and pick your repo
-4. Fill in these settings:
-   - **Name**: falcon-addon
-   - **Runtime**: Node
-   - **Build Command**: `npm install`
-   - **Start Command**: `npm start`
-5. Tap **Create Web Service**
-6. Wait ~2 minutes for it to deploy
-7. You'll get a URL like: `https://falcon-addon.onrender.com`
-
-### Step 3 — Install in Stremio
-
-**On PC:**
-1. Open Stremio
-2. Go to the addons page
-3. Paste this URL into the search box:
-   `https://falcon-addon.onrender.com/manifest.json`
-4. Click Install
-
-**On Android:**
-1. Open Stremio app
-2. Tap the puzzle piece icon (Addons)
-3. Tap the 🔍 search icon
-4. Paste: `https://falcon-addon.onrender.com/manifest.json`
-5. Tap Install
-
-> ⚠️ Replace `falcon-addon.onrender.com` with your actual Render URL
+```json
+{
+  "id": "com.falcon.addon",
+  "version": "1.1.0",
+  "name": "Falcon",
+  "description": "Free public domain movies and classics from the Internet Archive",
+  "logo": "https://i.imgur.com/8JNNFpE.png",
+  "background": "https://i.imgur.com/8JNNFpE.png",
+  "resources": ["catalog", "meta", "stream"],
+  "types": ["movie", "series"],
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "falcon-public-domain",
+      "name": "Falcon – Free Movies"
+    },
+    {
+      "type": "movie",
+      "id": "falcon-classics-80s90s",
+      "name": "Falcon – 80s & 90s Classics"
+    },
+    {
+      "type": "movie",
+      "id": "falcon-classics-2000s",
+      "name": "Falcon – 2000s Classics"
+    },
+    {
+      "type": "movie",
+      "id": "falcon-horror",
+      "name": "Falcon – Horror"
+    },
+    {
+      "type": "series",
+      "id": "falcon-series-80s90s",
+      "name": "Falcon – Classic TV Shows"
+    }
+  ],
+  "idPrefixes": ["falcon:", "tt"],
+  "behaviorHints": {
+    "configurable": false
+  }
+}
+```
 
 ---
 
-## What you get
-- Hundreds of free, legal public domain movies
-- Search works inside Stremio
-- Streams directly — no sign-up needed
-- Works on PC and Android Stremio apps
+## Catalogs
+
+| Catalog | Type | Description |
+|---|---|---|
+| Falcon – Free Movies | Movie | Public domain films from the Internet Archive |
+| Falcon – 80s & 90s Classics | Movie | Best movies from the 80s and 90s |
+| Falcon – 2000s Classics | Movie | Best movies from the 2000s |
+| Falcon – Horror | Movie | Classic horror films |
+| Falcon – Classic TV Shows | Series | Best TV shows from the 80s, 90s and 2000s |
+
+---
+
+## Tech Stack
+
+- [Stremio Addon SDK](https://github.com/Stremio/stremio-addon-sdk)
+- [Node.js](https://nodejs.org)
+- [Internet Archive API](https://archive.org)
+- Hosted on [Render.com](https://render.com)
+
+---
+
+## License
+
+MIT
